@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity Details</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Activity Details</h1>
+        <div class="panel panel-default">
+            <div class="panel-heading">Activity ID: {{ activity.id }}</div>
+            <div class="panel-body">
+                <p><strong>Customer Name:</strong> {{ activity.customer_name }}</p>
+                <p><strong>Category:</strong> {{ activity.category }}</p>
+                <p><strong>Status:</strong> {{ activity.status }}</p>
+                <p><strong>Follow-up Date:</strong> {{ activity.followup.strftime('%Y-%m-%d %H:%M') if activity.followup
+                    else 'N/A' }}</p>
+                <p><strong>Description:</strong> {{ activity.description }}</p>
+            </div>
+        </div>
+        <a href="{{ url_for('index') }}" class="btn btn-default">Back to List</a>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

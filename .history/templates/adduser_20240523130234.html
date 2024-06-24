@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header Section</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #f4f8fa;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            /* Ensure the header is above other content */
+        }
+
+        .logo {
+            width: 50px;
+            height: auto;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .user-info img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            padding-top: 60px;
+            /* Ensure content starts below the fixed header */
+        }
+
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 60px;
+            /* Adjusted top position to avoid overlapping with the header */
+            left: 0;
+            background-color: #333;
+            padding-top: 20px;
+            overflow-y: auto;
+            /* Enable scrolling if sidebar height exceeds viewport */
+            z-index: 999;
+            /* Ensure the sidebar is above other content */
+        }
+
+        .sidebar a {
+            padding: 10px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #fff;
+            display: block;
+        }
+
+        .sidebar a:hover {
+            background-color: #555;
+        }
+
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .sidebar {
+                width: 25%;
+                height: auto;
+                position: relative;
+                top: 0;
+                /* Resetting top position for smaller screens */
+            }
+
+            .sidebar a {
+                padding: 15px;
+            }
+
+            .content {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="company_logo.png" alt="Company Logo">
+        </div>
+        <div class="user-info">
+            <!-- User Image -->
+            <img src="user_image.png" alt="User Image">
+            <div class="dropdown">
+                <a href="#" class="username">Username</a>
+                <div class="dropdown-content">
+                    <a href="#">Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="sidebar">
+        <a href="#"><i class="fas fa-home"></i> Index</a>
+        <a href="#"><i class="fas fa-user-plus"></i> Add User</a>
+        <a href="#"><i class="fas fa-folder-plus"></i> Add Category</a>
+        <a href="#"><i class="fas fa-cog"></i> Admin</a>
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
